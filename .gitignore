@@ -1,42 +1,47 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# Compiled output
+# Angular build output
 /dist
 /tmp
 /out-tsc
-/bazel-out
 
-# Node
+# Node.js dependencies
 /node_modules
-npm-debug.log
-yarn-error.log
 
-# IDEs and editors
+# IDE/editor settings
+.vscode/
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Miscellaneous
+# Environment files
+.env
+.env.*.local
+
+# Cache files
 /.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+/.angular/cache/**
+/.angular/cache
+/angular/cache
+/.npm
+/.pnpm-store
 
-# System files
+# OS-specific files
 .DS_Store
 Thumbs.db
+
+# Coverage directory used by testing tools
+/coverage
+
+# Optional: ignore local Angular CLI config if project-specific
+.angular/config.json
+
+# Optional: ignore any temporary test or debug files
+*.tmp
+*.temp
