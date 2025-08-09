@@ -5,7 +5,7 @@
 
 # Node.js dependencies
 /node_modules
-
+**/node_modules
 # IDE/editor settings
 .vscode/
 .idea/
@@ -41,7 +41,8 @@ Thumbs.db
 
 # Optional: ignore local Angular CLI config if project-specific
 .angular/config.json
-
+.angular/*
+**/.angular/
 # Optional: ignore any temporary test or debug files
 *.tmp
 *.temp
