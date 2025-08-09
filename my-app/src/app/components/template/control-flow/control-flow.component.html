@@ -1,0 +1,105 @@
+<hr style="margin-top: 20px;" />
+<h2>Control flow if</h2>
+
+<!--
+  new way to control flow
+-->
+@if (isAdult) {
+  <p>adult content</p>
+
+}@else if(isTeenager){
+  <p>teenager content</p>
+}
+@else{
+  <p>Content for false condition</p>
+}
+
+
+<!--
+  old way to control flow
+-->
+
+<ng-container *ngIf="isAdult; else otherTemplate">
+  <p>Content for true condition</p>
+</ng-container>
+<ng-template #otherTemplate>
+  <p>Content for false condition</p>
+</ng-template>
+
+
+<hr style="margin-top: 20px;" />
+<h2>Control flow for</h2>
+
+@for (item of loadingData$ | async; track $index) {
+  <p>{{$index}} - {{ item }}</p>
+}
+
+@if(loadingData$ | async; as data){
+  <ul>
+    <li *ngFor="let item of data; track item; index as i">{{ i }} - {{ item }}</li>
+  </ul>
+}@else{
+  <p>loading.....</p>
+}
+
+<input type="text" #name >
+<input type="text" #age style="margin-left: 5px;">
+<button (click)="addPerson(name.value, age.value)" style="margin-left: 5px; margin-bottom: 5px;">Add person</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Adult</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (person of people; track $index) {
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        @if(person.age >= 18){
+          <td>{{ 'Yes' }}</td>
+        }@else{
+          <td>{{ 'No' }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
+
+<ul>
+  @for (person of people2; track $index) {
+    <li>{{ person.name }} - {{ person.age }}</li>
+  }@empty {
+    <li>No data available</li>
+  }
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (person of people2; track $index) {
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+      </tr>
+    }@empty {
+      <tr>
+        <td colspan="2">No data available</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
+
+
+<hr style="margin-top: 20px;" />
+<h2>Control flow switch case</h2>

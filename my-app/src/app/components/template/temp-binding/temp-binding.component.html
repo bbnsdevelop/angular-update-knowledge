@@ -1,0 +1,39 @@
+<h2>Bindings</h2>
+
+<h3>interpolation</h3>
+<p><strong>Name:</strong> {{ name }}</p>
+<p><strong>Age:</strong> {{ age }}</p>
+
+<hr />
+<h3>property binding</h3>
+<button [disabled]="isAdult" (click)="save()" [ngClass]="{'button': !isAdult}">click here</button>
+
+<hr />
+<h3>attribute binding</h3>
+
+<input [attr.type]="'text'" [attr.placeholder]="'Type your name'" />
+<p [attr.title]="name" [attr.aria-label]="name"> {{ name }}</p>
+
+<p [ngClass]="{'adult': !isAdult, 'minor': isAdult}">class and style binding</p>
+<p [class]="{'adult': !isAdult, 'minor': isAdult}">class and style binding</p>
+<p [style.text-decoration]="'underline'">style binding</p>
+
+
+<hr />
+<h3>event binding</h3>
+<button (click)="sum()">+</button>
+<button (click)="sub()">-</button>
+<br />
+<br />
+<input (keydown.shift.t)="onKeyDown($event)"/>
+
+<div style="background-color: antiquewhite; width: 150px; height: 150px; margin-top: 10px;"
+  (mousemove)="onMouseMove($event)">
+</div>
+
+
+
+<hr />
+<h3>two-way binding</h3>
+
+<input type="text" [(ngModel)]="name" name="name" id="name" />
