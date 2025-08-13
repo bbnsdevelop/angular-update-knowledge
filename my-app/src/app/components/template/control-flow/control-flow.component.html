@@ -103,3 +103,33 @@
 
 <hr style="margin-top: 20px;" />
 <h2>Control flow switch case</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Adult</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (person of people; track $index) {
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        @switch (person.gender) {
+          @case ('F') {
+            <td>Feminine</td>
+          }
+          @case ('M') {
+            <td>Masculine</td>
+          }
+          @default {
+            <td>Neutral</td>
+          }
+        }
+      </tr>
+    }
+  </tbody>
+</table>
+
