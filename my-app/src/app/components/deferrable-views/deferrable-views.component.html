@@ -10,3 +10,52 @@
 }@error {
   <p>loading failed</p>
 }
+
+<hr style="margin-top: 20px;" />
+<h2>Deferrable views (load components) with params - on</h2>
+<!--
+  // idle (default)
+  // timer
+  // viewport
+  // interaction
+  // hover
+  // immediate
+  // prefetch
+
+  @defer (on timer(5s), viewport, hover) {.  ---- this work as OR logic
+-->
+@defer (on timer(5s)) {
+  <app-new/>
+}@placeholder {
+  <p>show before load something on page</p>
+}@loading {
+  <p>loading component</p>
+}@error {
+  <p>loading failed</p>
+}
+
+
+
+<hr style="margin-top: 20px;" />
+<h2>Deferrable views (load components) with params - when</h2>
+<button (click)="show = true">add true</button>
+@defer (when show) {
+  <app-new/>
+}@placeholder {
+  <p>show before load page</p>
+}@loading {
+  <p>loading component</p>
+}@error {
+  <p>loading failed</p>
+}
+
+@defer (when data | async) {
+  <p>show component after load data</p>
+  <app-new/>
+}@placeholder {
+  <p>show before load page</p>
+}@loading {
+  <p>loading component</p>
+}@error {
+  <p>loading failed</p>
+}
