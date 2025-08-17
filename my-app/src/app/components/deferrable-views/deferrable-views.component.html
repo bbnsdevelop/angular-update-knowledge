@@ -59,3 +59,17 @@
 }@error {
   <p>loading failed</p>
 }
+
+
+<hr style="margin-top: 20px;" />
+<h2 #trigger>Deferrable views (load components) with params - interaction - placeholder</h2>
+
+@defer {
+  <app-new />
+}@placeholder(minimum 5s) {
+  <p>show before load page</p>
+}@loading {
+  <p>loading component</p>
+}@error {
+  <p>loading failed</p>
+}
