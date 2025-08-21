@@ -6,6 +6,7 @@ import { NewComponent } from './components/new/new.component';
 import { TempBindingComponent } from './components/template/temp-binding/temp-binding.component';
 import { ControlFlowComponent } from './components/template/control-flow/control-flow.component';
 import { DeferrableViewsComponent } from './components/deferrable-views/deferrable-views.component';
+import { SignalsComponent } from "./components/signals/signals.component";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { DeferrableViewsComponent } from './components/deferrable-views/deferrab
     RouterOutlet, NewComponent, TempBindingComponent,
     TempVariableComponent,
     ControlFlowComponent,
-    DeferrableViewsComponent],
+    DeferrableViewsComponent,
+    SignalsComponent],
   // templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   template: `
@@ -24,6 +26,7 @@ import { DeferrableViewsComponent } from './components/deferrable-views/deferrab
     <app-temp-variable/>
     <app-control-flow/>
     <app-deferrable-views/>
+    <app-signals />
   `,
 })
 export class AppComponent {
